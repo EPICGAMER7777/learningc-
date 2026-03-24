@@ -31,6 +31,9 @@ void switchVars(std::string &var1,std::string &var2){
     var1 = var2;
     var2 = temp;
 }
+void ConstVars(const std::string name){
+    std::cout << "Hello there" << name << '\n';
+}
 
 int main(){
     // 1. C++ tutorial for beginners
@@ -42,7 +45,7 @@ int main(){
         double gpa = 3.5;
         char grade = 'A';
         bool isSmart = true;
-        string name = "Bro";
+        std::string name = "Bro";
         printStr(name);
         printInt(age);
     }
@@ -60,7 +63,7 @@ int main(){
 
     // 5. Typedef and type aliases
     {
-        typedef string text;
+        typedef std::string text;
         using number = int;
         text msg = "Hello typedef";
         number n = 42;
@@ -87,7 +90,7 @@ int main(){
 
     // 8. User input (simulated)
     {
-        string username = "SimulatedUser";
+        std::string username = "SimulatedUser";
         printStr(username);
     }
 
@@ -116,7 +119,7 @@ int main(){
     // 14. Ternary operator
     {
         int age = 18;
-        string result = (age >= 18) ? "Adult" : "Minor";
+        std::string result = (age >= 18) ? "Adult" : "Minor";
         printStr(result);
     }
 
@@ -128,7 +131,7 @@ int main(){
 
     // 17. Useful string methods
     {
-        string s = "Bro Code";
+        std::string s = "Bro Code";
         printInt(s.length());
     }
 
@@ -281,17 +284,19 @@ int main(){
     // 43. Memory addresses
     {
         int x = 10;
-        cout << &x << '\n';
+        std::cout << &x << '\n';
     }
 
     // 44. Pass by VALUE vs pass by REFERENCE
     {
-        string a = "Hello";
-        string b = "World";
+        std::string a = "Hello";
+        std::string b = "World";
         switchVars(a, b);
         printStr(a);
         printStr(b);
     }
+    // Const Parameter
+    ConstVars("Billy Bob");
 
     return 0;
 }
@@ -323,4 +328,3 @@ void binarySearch(int array[], int size){
         
     }
 }
-
